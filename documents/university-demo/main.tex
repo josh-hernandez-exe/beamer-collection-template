@@ -1,0 +1,135 @@
+\documentclass[11pt]{article}
+
+% Shared listings
+\usepackage{../../common/styles/shared-listings}
+
+% Shared colors
+\usepackage{../../common/styles/shared-colors}
+
+% Document packages
+\usepackage{../../common/styles/documents/common-packages}
+
+% Theme
+\usepackage{../themes/university/documentstyleUniversity}
+
+% Final setup
+\usepackage{../../common/styles/documents/common-after}
+
+\graphicspath{
+    {images/}
+}
+
+%************************************************************
+% Document-specific macros
+%************************************************************
+\newcommand{\texTitle}{Technical Report: Twin Stars University}
+\newcommand{\texSubtitle}{A Comprehensive Guide to Excellence}
+\newcommand{\texAuthor}{Dr. Jane Smith}
+\newcommand{\texDate}{April 19, 2026}
+\newcommand{\texAffiliation}{Department of Advanced Studies}
+\newcommand{\texSubject}{Academic Research}
+\newcommand{\texKeywords}{research, template, latex}
+\newcommand{\universitylogo}{university-logo.png}
+
+\addbibresource{references/demo.bib}
+% Optional shared bibliographies:
+% \adddocumentcommonbib{shared.bib}
+% \addrootcommonbib{shared.bib}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+    This document demonstrates the University of Twin Stars document template. It provides a professional format for academic papers, reports, and theses with consistent styling, proper typography, and integrated bibliography support.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+\section{Introduction}
+
+This template provides a clean, professional foundation for academic documents. It includes:
+
+\begin{itemize}
+    \item Professional typography and layout
+    \item Integrated bibliography support (IEEE style)
+    \item Consistent color scheme matching the University of Twin Stars theme
+    \item Support for code listings and technical content
+    \item Proper mathematical typesetting
+\end{itemize}
+
+The document structure follows academic conventions with sections, subsections, and proper formatting.
+
+\section{Features}
+
+\subsection{Mathematics Support}
+
+The template fully supports \LaTeX{} mathematical expressions. Inline mathematics works as expected: $E = mc^2$. Display mathematics:
+
+\begin{equation}
+    \int_0^\infty e^{-x^2} dx = \frac{\sqrt{\pi}}{2}
+\end{equation}
+
+\subsection{Code Listings}
+
+Multiple programming languages are supported:
+
+\begin{lstlisting}[style=pythonstyle, caption=Python Example]
+def calculate_average(numbers: list) -> float:
+    """Calculate the average of a list of numbers."""
+    return sum(numbers) / len(numbers)
+
+data = [1, 2, 3, 4, 5]
+avg = calculate_average(data)
+print(f"Average: {avg}")
+\end{lstlisting}
+
+\subsection{Figures and Tables}
+
+You can include figures and tables with proper captions and references.
+
+\begin{table}[h]
+    \centering
+    \caption{Sample Data Table}
+    \begin{tabular}{|l|c|c|}
+        \hline
+        \textbf{Category} & \textbf{Value 1} & \textbf{Value 2} \\
+        \hline
+        Alpha             & 10               & 20               \\
+        Beta              & 15               & 25               \\
+        Gamma             & 12               & 22               \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\section{Methodology}
+
+This section outlines the approach taken. The University of Twin Stars colors enhance visual hierarchy:
+
+\begin{itemize}
+    \item \textcolor{TwinStarsBlue}{\textbf{Primary elements}} use Twin Stars Blue
+    \item \textcolor{TwinStarsCrimson}{\textbf{Accents}} use Twin Stars Crimson
+    \item \textcolor{TwinStarsGold}{\textbf{Highlights}} use Twin Stars Gold
+\end{itemize}
+
+\subsection{Research Design}
+
+The design incorporates best practices from academic publishing.
+
+\section{Results}
+
+Present your findings clearly and professionally.
+
+\section{Discussion}
+
+Interpret your results in context.
+
+\section{Conclusion}
+
+This template provides everything needed for professional academic documents. Customize the colors, fonts, and structure to match your organization's guidelines.
+
+\nocite{*}
+\printbibliography
+
+\end{document}

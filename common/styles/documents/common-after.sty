@@ -1,0 +1,41 @@
+\ProvidesPackage{common-after}
+
+%****************************************************************************
+% Setup Title, Author, and PDF Metadata for Documents
+% Load this file AFTER your document theme and other customizations
+%****************************************************************************
+
+% Document metadata depends on project macros, so defer until they are defined.
+\AtBeginDocument{
+    \hypersetup{
+        pdftitle={\texTitle},
+        pdfauthor={\texAuthor},
+        pdfsubject={\texSubject},
+        pdfkeywords={\texKeywords},
+    }
+
+    \title{\texTitle}
+    \author{\texAuthor}
+    \ifdefined\texDate
+        \date{\texDate}
+    \else
+        \date{\today}
+    \fi
+}
+
+% Shared asset paths for any project under documents/
+\makeatletter
+\providecommand\Ginput@path{}
+\g@addto@macro\Ginput@path{{../common/images/}{../../common/images/}}
+\makeatother
+
+% Shared bibliography helpers for any project under documents/
+\newcommand{\adddocumentcommonbib}[1]{\addbibresource{../common/references/#1}}
+\newcommand{\addrootcommonbib}[1]{\addbibresource{../../common/references/#1}}
+
+%************************************************************
+% Page Style Setup
+%************************************************************
+% Most pagestyle configuration is handled by specific themes,
+% but this provides sensible defaults
+\pagestyle{fancy}

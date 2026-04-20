@@ -1,0 +1,115 @@
+% ACME Corp Beamer Theme
+% Modern, minimal corporate design
+% Based on JHSPH Theme by Jacob Fiksel, February 2017
+% Taken from The University of Tennessee, Knoxville theme by Enda Hargaden
+
+\ProvidesPackage{beamerthemeCorporate}
+
+\mode<presentation>
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{textcomp}
+
+% Helvetica font
+\usepackage[scaled]{helvet}
+\usepackage[T1]{fontenc}
+\renewcommand\familydefault{\sfdefault}
+
+% Disable navigation symbols
+\setbeamertemplate{navigation symbols}{}
+
+% Import shared color definitions
+\usepackage{../../common/styles/shared-colors}
+
+% Linebreak helper
+\providecommand{\br}{\vspace{\baselineskip}}
+
+%************************************************************
+% Color Setup
+%************************************************************
+\setbeamercolor{frametitle}{fg=AcmeCharcoal}
+\setbeamercolor{title}{fg=AcmeCharcoal}
+
+% Item colors: flat, minimal style (no circles)
+\setbeamercolor{item}{fg=AcmeCharcoal}
+\setbeamercolor{subitem}{fg=AcmeRed}
+\setbeamercolor{subsubitem}{fg=AcmeGray}
+\setbeamercolor{normal text}{fg=AcmeCharcoal}
+
+%************************************************************
+% Inner Theme (item bullets) - Flat style
+%************************************************************
+\setbeamercolor{postit}{fg=white,bg=AcmeRed}
+\setbeamercolor{postthat}{fg=AcmeRed,bg=AcmeRed}
+\useinnertheme{default}
+\setbeamertemplate{itemize item}[square]
+\setbeamertemplate{itemize subitem}[-]
+\setbeamertemplate{enumerate items}[default]
+\setbeamertemplate{caption}[numbered]
+\setbeamerfont{block title}{size={}}
+
+%************************************************************
+% Background and Framing
+%************************************************************
+\setbeamertemplate{background canvas}{
+  \begin{tikzpicture}
+    \useasboundingbox (0,0) rectangle (\paperwidth,\paperheight);
+    % Subtle light gray background
+    \fill[color=AcmeOffWhite] (0,0) rectangle (\paperwidth,\paperheight);
+    % Thin accent line at top
+    \draw[line width=2pt, color=AcmeRed] (0,\paperheight) -- (\paperwidth,\paperheight);
+  \end{tikzpicture}
+}
+
+%************************************************************
+% Title Page
+%************************************************************
+\setbeamertemplate{title page}{
+  \begin{center}
+    \vspace{1cm}
+    {\LARGE \textcolor{AcmeCharcoal}{\textbf{\inserttitle}}}
+    \vspace{0.5cm}
+
+    {\large \textcolor{AcmeRed}{\insertsubtitle}}
+    \vspace{1.5cm}
+
+    {\insertauthor}
+    \vspace{1cm}
+
+    \ifdefined\corporatelogo
+      \IfFileExists{\corporatelogo}{\includegraphics[width=1.5in,keepaspectratio]{\corporatelogo}}{}
+    \fi
+
+    \vfill
+    {\small \insertdate}
+  \end{center}
+}
+
+%************************************************************
+% Table of Contents Styling
+%************************************************************
+\setbeamercolor{section in toc}{fg=AcmeCharcoal}
+\setbeamercolor{section in toc shaded}{fg=AcmeGray}
+\setbeamertemplate{section in toc}{%
+  {\color{AcmeRed}\inserttocsectionnumber.}~\inserttocsection
+}
+\setbeamercolor{subsection in toc}{bg=white,fg=AcmeGray}
+\setbeamertemplate{subsection in toc}{%
+  \hspace{1.2em}{\color{AcmeRed}\rule[0.3ex]{3pt}{3pt}}~\inserttocsubsection\par
+}
+
+%************************************************************
+% Footline (minimal)
+%************************************************************
+\setbeamertemplate{footline}{
+  \hbox{%
+    \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1ex,left]{author in head/foot}%
+      \usebeamerfont{author in head/foot}\phantom{x}\textbf{ACME Corp}\phantom{x}
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1ex,right]{date in head/foot}%
+      \usebeamerfont{date in head/foot}\insertframenumber{} / \inserttotalframenumber\phantom{x}
+    \end{beamercolorbox}}%
+  \vskip0pt%
+}
+
+\mode<all>

@@ -1,0 +1,295 @@
+\ProvidesPackage{shared-listings}
+\RequirePackage[usenames,dvipsnames,dvisvgm]{xcolor}
+
+%************************************************************
+% Code Inclusion Configuration
+%************************************************************
+\usepackage{listings}
+\usepackage{courier}
+
+%************************************************************
+% Color Definitions for Syntax Highlighting
+%************************************************************
+\definecolor{CommentDarkGreen}{rgb}{0.0,0.4,0.0}
+\definecolor{DeepBlue}{rgb}{0,0,0.5}
+\definecolor{DeepRed}{rgb}{0.6,0,0}
+\definecolor{DeepGreen}{rgb}{0,0.5,0}
+\definecolor{StringBrown}{rgb}{0.6,0.3,0}
+
+\lstloadlanguages{Python,Java}
+
+% Default fixed font does not support bold face
+\newcommand{\ttb}{\fontfamily{txtt}\fontseries{bx}\selectfont}
+\newcommand{\ttm}{\fontfamily{txtt}\fontseries{m}\selectfont}
+
+%************************************************************
+% Python Style
+%************************************************************
+\lstdefinestyle{pythonstyle}{
+    language=Python,
+    basicstyle=\ttm\small,
+    otherkeywords={self},
+    keywordstyle=\ttm\color{DeepBlue},
+    emph={MyClass,__init__},
+    emphstyle=\ttb\color{DeepRed},
+    stringstyle=\color{DeepGreen},
+    commentstyle=\color{CommentDarkGreen}\ttm,
+    frame=tb,
+    showstringspaces=false,
+    breaklines=true,
+}
+
+%************************************************************
+% Java Style
+%************************************************************
+\lstdefinestyle{javastyle}{
+    language=Java,
+    basicstyle=\ttm\small,
+    otherkeywords={self},
+    keywordstyle=\ttm\color{DeepBlue},
+    emph={MyClass,__init__},
+    emphstyle=\ttb\color{DeepRed},
+    stringstyle=\color{DeepGreen},
+    commentstyle=\color{CommentDarkGreen}\ttm,
+    frame=tb,
+    showstringspaces=false,
+    breaklines=true,
+}
+
+%************************************************************
+% JavaScript & TypeScript
+%************************************************************
+\lstdefinelanguage{JavaScript}{
+    keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break, const, let, async, await},
+    keywordstyle=\color{DeepBlue}\bfseries,
+    ndkeywords={class, export, boolean, throw, implements, import, this},
+    ndkeywordstyle=\color{DeepRed}\bfseries,
+    identifierstyle=\color{black},
+    sensitive=false,
+    comment=[l]{//},
+    morecomment=[s]{/*}{*/},
+    commentstyle=\color{CommentDarkGreen}\ttm,
+    stringstyle=\color{DeepGreen},
+    showstringspaces=false,
+    morestring=[b]',
+    morestring=[b]"
+}
+
+\lstdefinestyle{javascriptstyle}{
+    language=JavaScript,
+    basicstyle=\ttm\small,
+    frame=tb,
+    showstringspaces=false,
+    breaklines=true,
+}
+
+\lstdefinelanguage{TypeScript}{
+    keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break, const, let, async, await, interface, type, enum, namespace,public, private, protected},
+    keywordstyle=\color{DeepBlue}\bfseries,
+    ndkeywords={class, export, boolean, throw, implements, import, this, string, number, any},
+    ndkeywordstyle=\color{DeepRed}\bfseries,
+    identifierstyle=\color{black},
+    sensitive=false,
+    comment=[l]{//},
+    morecomment=[s]{/*}{*/},
+    commentstyle=\color{CommentDarkGreen}\ttm,
+    stringstyle=\color{DeepGreen},
+    showstringspaces=false,
+    morestring=[b]',
+    morestring=[b]"
+}
+
+\lstdefinestyle{typescriptstyle}{
+    language=TypeScript,
+    basicstyle=\ttm\small,
+    frame=tb,
+    showstringspaces=false,
+    breaklines=true,
+}
+
+%************************************************************
+% Bash/Shell
+%************************************************************
+\lstdefinelanguage{Bash}{
+    keywords={if, then, else, elif, fi, for, do, done, while, case, esac, function, local, return, echo, exit, export},
+    keywordstyle=\color{DeepBlue}\bfseries,
+    ndkeywords={true, false, set, unset},
+    ndkeywordstyle=\color{DeepRed}\bfseries,
+    commentstyle=\color{CommentDarkGreen}\ttm,
+    stringstyle=\color{DeepGreen},
+    basicstyle=\ttm\small,
+    frame=tb,
+    showstringspaces=false,
+    breaklines=true,
+    sensitive=true
+}
+
+%************************************************************
+% PowerShell
+%************************************************************
+\lstdefinelanguage{PowerShell}{
+    keywords={Write-Host, Get-Process, Set-Item, New-Item, Remove-Item, Get-ChildItem, foreach, if, else, function, param, return, try, catch},
+    keywordstyle=\color{DeepBlue}\bfseries,
+    commentstyle=\color{CommentDarkGreen}\ttm,
+    stringstyle=\color{DeepGreen},
+    basicstyle=\ttm\small,
+    frame=tb,
+    showstringspaces=false,
+    breaklines=true,
+    sensitive=false
+}
+
+%************************************************************
+% C/C++/C#
+%************************************************************
+\lstdefinestyle{cstyle}{
+    language=C,
+    basicstyle=\ttm\small,
+    keywordstyle=\color{DeepBlue}\bfseries,
+    commentstyle=\color{CommentDarkGreen}\ttm,
+    stringstyle=\color{DeepGreen},
+    frame=tb,
+    showstringspaces=false,
+    breaklines=true,
+}
+
+\lstdefinestyle{cppstyle}{
+    language=C++,
+    basicstyle=\ttm\small,
+    keywordstyle=\color{DeepBlue}\bfseries,
+    commentstyle=\color{CommentDarkGreen}\ttm,
+    stringstyle=\color{DeepGreen},
+    frame=tb,
+    showstringspaces=false,
+    breaklines=true,
+}
+
+\lstdefinelanguage{CSharp}{
+    keywords={abstract,as,base,bool,break,byte,case,catch,char,checked,class,const,continue,decimal,default,delegate,do,double,else,enum,event,explicit,extern,false,finally,fixed,float,for,foreach,goto,if,implicit,in,int,interface,internal,is,lock,long,namespace,new,null,object,operator,out,override,params,private,protected,public,readonly,ref,return,sbyte,sealed,short,sizeof,stackalloc,static,string,struct,switch,this,throw,true,try,typeof,uint,ulong,unchecked,unsafe,ushort,using,virtual,void,volatile,while},
+    keywordstyle=\color{DeepBlue}\bfseries,
+    commentstyle=\color{CommentDarkGreen}\ttm,
+    stringstyle=\color{DeepGreen},
+    basicstyle=\ttm\small,
+    frame=tb,
+    showstringspaces=false,
+    breaklines=true,
+    sensitive=true
+}
+
+%************************************************************
+% Rust
+%************************************************************
+\lstdefinelanguage{Rust}{
+    keywords={as,async,await,break,const,continue,crate,dyn,else,enum,extern,false,fn,for,if,impl,in,let,loop,match,mod,move,mut,pub,ref,return,self,Self,static,struct,super,trait,true,type,unsafe,use,where,while,abstract,become,box,do,final,macro,override,priv,typeof,unsized,virtual,yield},
+    keywordstyle=\color{DeepBlue}\bfseries,
+    commentstyle=\color{CommentDarkGreen}\ttm,
+    stringstyle=\color{DeepGreen},
+    basicstyle=\ttm\small,
+    frame=tb,
+    showstringspaces=false,
+    breaklines=true,
+    sensitive=true
+}
+
+%************************************************************
+% Go
+%************************************************************
+\lstdefinelanguage{Go}{
+    keywords={break,case,chan,const,continue,default,defer,else,fallthrough,for,func,go,goto,if,import,interface,label,package,range,return,select,struct,switch,type,var},
+    keywordstyle=\color{DeepBlue}\bfseries,
+    commentstyle=\color{CommentDarkGreen}\ttm,
+    stringstyle=\color{DeepGreen},
+    basicstyle=\ttm\small,
+    frame=tb,
+    showstringspaces=false,
+    breaklines=true,
+    sensitive=true
+}
+
+%************************************************************
+% Ruby
+%************************************************************
+\lstdefinelanguage{Ruby}{
+    keywords={alias,and,BEGIN,begin,break,case,class,def,defined?,do,else,elsif,END,end,ensure,false,for,if,in,module,next,nil,not,or,redo,rescue,retry,return,self,super,then,true,undef,unless,until,when,while,yield},
+    keywordstyle=\color{DeepBlue}\bfseries,
+    commentstyle=\color{CommentDarkGreen}\ttm,
+    stringstyle=\color{DeepGreen},
+    basicstyle=\ttm\small,
+    frame=tb,
+    showstringspaces=false,
+    breaklines=true,
+    sensitive=true
+}
+
+%************************************************************
+% JSON (for reference)
+%************************************************************
+\lstdefinelanguage{JSON}{
+    basicstyle=\ttm\small,
+    commentstyle=\color{CommentDarkGreen},
+    stringstyle=\color{DeepGreen},
+    numberstyle=\color{DeepRed},
+    frame=tb,
+    showstringspaces=false,
+    breaklines=true,
+}
+
+%************************************************************
+% Rename listing caption
+%************************************************************
+%************************************************************
+% YAML (for configuration files)
+%************************************************************
+\lstdefinelanguage{YAML}{
+    keywords={true,false,null,yes,no},
+    keywordstyle=\color{DeepBlue}\bfseries,
+    commentstyle=\color{CommentDarkGreen}\ttm,
+    stringstyle=\color{DeepGreen},
+    basicstyle=\ttm\small,
+    frame=tb,
+    showstringspaces=false,
+    breaklines=true,
+    sensitive=true,
+    morecomment=[l]{\#}
+}
+
+\lstdefinestyle{yamlstyle}{
+    language=YAML,
+    basicstyle=\ttm\small,
+    frame=tb,
+    showstringspaces=false,
+    breaklines=true,
+}
+
+%************************************************************
+% Rename listing caption
+%************************************************************
+\renewcommand{\lstlistingname}{Program}
+
+%************************************************************
+% Extensibility: How to add a new language
+%************************************************************
+% To add support for a language not listed above:
+%
+% \lstdefinelanguage{MyLanguage}{
+%     keywords={keyword1,keyword2,keyword3},
+%     keywordstyle=\color{DeepBlue}\bfseries,
+%     commentstyle=\color{CommentDarkGreen}\ttm,
+%     stringstyle=\color{DeepGreen},
+%     basicstyle=\ttm\small,
+%     frame=tb,
+%     showstringspaces=false,
+%     breaklines=true,
+%     sensitive=true
+% }
+%
+% Then define a style:
+% \lstdefinestyle{mylanguagestyle}{
+%     language=MyLanguage,
+%     ... (inherit from defaults above)
+% }
+%
+% Use in your document:
+% \begin{lstlisting}[style=mylanguagestyle]
+% ... your code here ...
+% \end{lstlisting}

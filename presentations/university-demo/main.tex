@@ -1,0 +1,128 @@
+\documentclass[aspectratio=169]{beamer}
+
+% Shared listings and colors
+\usepackage{../../common/styles/shared-listings}
+
+% Beamer packages
+\usepackage{../../common/styles/presentations/common-packages}
+
+% Theme
+\usepackage{../themes/university/beamerthemeUniversity}
+
+% Final setup
+\usepackage{../../common/styles/presentations/common-after}
+
+\graphicspath{
+    {../themes/university/}
+    {images/}
+}
+
+% Presentation-specific macros
+\newcommand{\texTitle}{Presentation Template: University of Twin Stars}
+\newcommand{\texSubTitle}{A Guide to Beautiful Academic Presentations}
+\newcommand{\texShortTitle}{Twin Stars Demo}
+\newcommand{\texAuthor}{Your Name}
+\newcommand{\classname}{Department of Example Studies}
+\newcommand{\classnumber}{Spring 2026}
+\newcommand{\universitylogo}{university-logo.png}
+
+\addbibresource{references/demo.bib}
+% Optional shared bibliographies:
+% \addpresentationcommonbib{shared.bib}
+% \addrootcommonbib{shared.bib}
+
+\begin{document}
+
+\titlepage
+
+\begin{frame}
+    \frametitle{Outline}
+    \tableofcontents
+\end{frame}
+
+\section{Introduction}
+
+\begin{frame}
+    \frametitle{Welcome}
+    \begin{itemize}
+        \item This is the University of Twin Stars theme
+        \item Designed for academic presentations
+        \item Color palette inspired by the Cradle series
+              \begin{itemize}
+                  \item \textcolor{TwinStarsBlue}{Twin Stars Blue} (primary)
+                  \item \textcolor{TwinStarsCrimson}{Twin Stars Crimson} (accent)
+                  \item \textcolor{TwinStarsGold}{Twin Stars Gold} (highlights)
+              \end{itemize}
+        \item Minimal, professional, and readable
+    \end{itemize}
+\end{frame}
+
+\section{Features}
+
+\begin{frame}
+    \frametitle{Mathematics}
+    \begin{itemize}
+        \item Full support for \LaTeX{} math equations
+        \item Inline: $E = mc^2$
+        \item Display:
+    \end{itemize}
+    \begin{equation}
+        \int_0^\infty e^{-x^2} dx = \frac{\sqrt{\pi}}{2}
+    \end{equation}
+    \begin{itemize}
+        \item Works with Beamer overlays and animations
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Code Highlighting: Python}
+    The template supports syntax highlighting for 13+ languages.
+    \begin{lstlisting}[style=pythonstyle, caption=Example Python Code]
+def fibonacci(n: int) -> int:
+    """Calculate the nth Fibonacci number."""
+    if n <= 1:
+        return n
+    return fibonacci(n - 1) + fibonacci(n - 2)
+
+if __name__ == "__main__":
+    print(fibonacci(10))
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Code Highlighting: JavaScript}
+    \begin{lstlisting}[style=javascriptstyle, caption=Example JavaScript Code]
+async function fetchData(url) {
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
+}
+\end{lstlisting}
+\end{frame}
+
+\section{Conclusion}
+
+\begin{frame}
+    \frametitle{Summary}
+    \begin{itemize}
+        \item This template provides a clean, professional starting point
+        \item Supports rich academic content (math, code, images)
+        \item Use Python to generate plots and automate slides
+        \item Customize colors, fonts, and layouts in theme files
+              \begin{itemize}
+                  \item Edit \texttt{themes/university/beamerthemeUniversity.sty}
+                  \item Add project-specific macros in \texttt{main.tex}
+              \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[allowframebreaks]
+    \frametitle{References}
+    \printbibliography
+\end{frame}
+
+\end{document}

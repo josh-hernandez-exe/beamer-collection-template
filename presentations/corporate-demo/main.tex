@@ -1,0 +1,94 @@
+\documentclass[aspectratio=169]{beamer}
+
+% Shared listings and colors
+\usepackage{../../common/styles/shared-listings}
+
+% Beamer packages
+\usepackage{../../common/styles/presentations/common-packages}
+
+% Theme
+\usepackage{../themes/corporate/beamerthemeCorporate}
+
+% Final setup
+\usepackage{../../common/styles/presentations/common-after}
+
+\graphicspath{
+    {../themes/corporate/}
+    {images/}
+}
+
+% Presentation-specific macros
+\newcommand{\texTitle}{Corporate Presentation Template}
+\newcommand{\texSubTitle}{ACME Corp: Professional and Modern Design}
+\newcommand{\texShortTitle}{ACME Demo}
+\newcommand{\texAuthor}{Business Analyst}
+\newcommand{\corporatelogo}{corporate-logo.png}
+
+\addbibresource{references/demo.bib}
+% Optional shared bibliographies:
+% \addpresentationcommonbib{shared.bib}
+% \addrootcommonbib{shared.bib}
+
+\begin{document}
+
+\titlepage
+
+\begin{frame}
+    \frametitle{Executive Summary}
+    \begin{itemize}
+        \item Clean, minimal corporate theme
+        \item Flat design aesthetic
+        \item Professional color palette
+              \begin{itemize}
+                  \item \textcolor{AcmeCharcoal}{Charcoal primary}
+                  \item \textcolor{AcmeRed}{Red accent}
+              \end{itemize}
+        \item Ideal for business presentations
+    \end{itemize}
+\end{frame}
+
+\section{Business Case}
+
+\begin{frame}
+    \frametitle{Key Metrics}
+    \begin{itemize}
+        \item Revenue: \textcolor{AcmeRed}{\textbf{+15\%}} year-over-year
+        \item Market share: \textcolor{AcmeRed}{\textbf{+3\%}}
+        \item Customer satisfaction: \textcolor{AcmeRed}{\textbf{92\%}}
+        \item Operational efficiency: \textcolor{AcmeRed}{\textbf{Improved}} by 8\%
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Technical Implementation}
+    \begin{lstlisting}[style=pythonstyle, caption=Data Processing Pipeline]
+def process_pipeline(data: list) -> dict:
+    """Process business data through pipeline."""
+    filtered = [x for x in data if x > threshold]
+    aggregated = sum(filtered) / len(filtered)
+    return {"status": "success", "value": aggregated}
+\end{lstlisting}
+\end{frame}
+
+\section{Recommendations}
+
+\begin{frame}
+    \frametitle{Next Steps}
+    \begin{enumerate}
+        \item Implement recommendations by Q3 2026
+        \item Allocate resources to priority initiatives
+        \item Establish KPI tracking dashboard
+        \item Schedule quarterly reviews
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Questions?}
+    \centering
+    \Large
+    Thank you for your attention.\\
+    \vspace{1cm}
+    {\small\texttt{contact@acmecorp.example}}
+\end{frame}
+
+\end{document}

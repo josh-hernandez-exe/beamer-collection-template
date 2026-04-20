@@ -1,0 +1,102 @@
+% University of Twin Stars Beamer Theme
+% Based on JHSPH Theme by Jacob Fiksel, February 2017
+% Taken from The University of Tennessee, Knoxville theme by Enda Hargaden
+
+\ProvidesPackage{beamerthemeUniversity}
+
+\mode<presentation>
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{textcomp}
+
+% Helvetica font
+\usepackage[scaled]{helvet}
+\usepackage[T1]{fontenc}
+\renewcommand\familydefault{\sfdefault}
+
+% Disable navigation symbols
+\setbeamertemplate{navigation symbols}{}
+
+% Import shared color definitions
+\usepackage{../../common/styles/shared-colors}
+
+% Linebreak helper
+\providecommand{\br}{\vspace{\baselineskip}}
+
+%************************************************************
+% Color Setup
+%************************************************************
+\setbeamercolor{frametitle}{fg=TwinStarsBlue}
+\setbeamercolor{title}{fg=TwinStarsBlue}
+
+% Item colors
+\setbeamercolor{item}{fg=TwinStarsBlue}
+\setbeamercolor{subitem}{fg=TwinStarsCrimson}
+\setbeamercolor{subsubitem}{fg=TwinStarsGold}
+\setbeamercolor{normal text}{fg=Black}
+
+%************************************************************
+% Inner Theme (item bullets)
+%************************************************************
+\setbeamercolor{postit}{fg=white,bg=TwinStarsBlue}
+\setbeamercolor{postthat}{fg=TwinStarsBlue,bg=TwinStarsBlue}
+\useinnertheme{rounded}
+\setbeamertemplate{enumerate items}[circle]
+\setbeamertemplate{caption}[numbered]
+\setbeamerfont{block title}{size={}}
+
+%************************************************************
+% Title Page
+%************************************************************
+\setbeamertemplate{title page}{
+  \begin{center}\vspace{0.5\baselineskip}
+    {\Large \textcolor{TwinStarsBlue}{\inserttitle}}
+    \br
+    {\textcolor{TwinStarsCrimson}{\insertsubtitle}}
+    \br
+    {\large \insertauthor}
+    \br
+    \ifdefined\classname\classname\fi
+    \ifdefined\classnumber\classnumber\fi
+    \br
+    \ifdefined\universitylogo
+      \IfFileExists{\universitylogo}{\includegraphics[width=1.8in,keepaspectratio]{\universitylogo}}{}
+    \fi
+  \end{center}
+}
+
+%************************************************************
+% Table of Contents Styling
+%************************************************************
+\setbeamercolor{section in toc}{fg=TwinStarsGold}
+\setbeamercolor{section in toc shaded}{fg=TwinStarsBlue}
+\setbeamertemplate{section in toc}{%
+  {\color{TwinStarsBlue}\inserttocsectionnumber.}~\inserttocsection
+}
+\setbeamercolor{subsection in toc}{bg=white,fg=TwinStarsCrimson}
+\setbeamertemplate{subsection in toc}{%
+  \hspace{1.2em}{\color{TwinStarsBlue}\rule[0.3ex]{3pt}{3pt}}~\inserttocsubsection\par
+}
+\setbeamercolor{subsubsection in toc}{bg=white,fg=Black}
+\setbeamertemplate{subsubsection in toc}{%
+  \hspace{2.4em}{\color{TwinStarsCrimson}\rule[0.3ex]{3pt}{3pt}}~\inserttocsubsubsection\par
+}
+
+%************************************************************
+% Footline
+%************************************************************
+\setbeamertemplate{footline}{
+  \hbox{%
+    \begin{beamercolorbox}[wd=.3\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+      \usebeamerfont{author in head/foot}\insertshortauthor
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.4\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+      \usebeamerfont{title in head/foot}\insertshorttitle
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.3\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+      \usebeamerfont{date in head/foot}\insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+    \end{beamercolorbox}}%
+  \vskip0pt%
+}
+
+\mode<all>

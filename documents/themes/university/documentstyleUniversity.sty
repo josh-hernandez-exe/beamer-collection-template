@@ -1,0 +1,91 @@
+% University of Twin Stars Document Style
+% Professional academic document formatting
+
+\ProvidesPackage{documentstyleUniversity}
+
+%************************************************************
+% Import Shared Colors
+%************************************************************
+\usepackage{../../common/styles/shared-colors}
+
+%************************************************************
+% Page Styling with TwinStars Theme
+%************************************************************
+
+% Fancyhdr setup
+\pagestyle{fancy}
+\fancyhf{} % Clear default headers/footers
+\setlength{\headheight}{14pt}
+
+% Header: Logo (left) and page number (right)
+\rhead{\thepage}
+\lhead{\small \textbf{University of Twin Stars}}
+
+% Footer: Thin rule
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{TwinStarsBlue}\leaders\hrule height \headrulewidth\hfill}}
+
+%************************************************************
+% Custom Title Page
+%************************************************************
+\makeatletter
+\renewcommand{\maketitle}{
+  \newpage
+  \thispagestyle{empty}
+  \vspace*{2cm}
+
+  \begin{center}
+    % University logo placeholder (if defined)
+    \ifdefined\universitylogo
+      \IfFileExists{\universitylogo}{\includegraphics[width=3cm,keepaspectratio]{\universitylogo}\\[0.5cm]}{}
+    \fi
+
+    {\Large \textbf{\textcolor{TwinStarsBlue}{\texTitle}}}\\[0.5cm]
+
+    {\large \textcolor{TwinStarsCrimson}{\texSubtitle}}\\[2cm]
+
+    {\large \texAuthor}\\[0.5cm]
+    {\normalsize \texDate}\\[3cm]
+
+    \textit{\textcolor{TwinStarsGold}{\texAffiliation}}
+  \end{center}
+
+  \vfill
+  \newpage
+}
+\makeatother
+
+%************************************************************
+% Section and Subsection Styling
+%************************************************************
+\usepackage{titlesec}
+
+\titleformat{\section}
+  {\Large\bfseries\color{TwinStarsBlue}}
+  {\thesection}
+  {1em}
+  {}
+  [\color{TwinStarsCrimson}\hrule]
+
+\titleformat{\subsection}
+  {\large\bfseries\color{TwinStarsCrimson}}
+  {\thesubsection}
+  {1em}
+  {}
+
+\titleformat{\subsubsection}
+  {\normalsize\bfseries\color{TwinStarsGold}}
+  {\thesubsubsection}
+  {1em}
+  {}
+
+%************************************************************
+% Document-specific Macros (to be defined in main.tex)
+%************************************************************
+% \newcommand{\texTitle}{Your Title}
+% \newcommand{\texSubtitle}{Your Subtitle}
+% \newcommand{\texAuthor}{Your Name}
+% \newcommand{\texDate}{April 2026}
+% \newcommand{\texAffiliation}{Your Department}
+% \newcommand{\universitylogo}{path/to/logo.png}

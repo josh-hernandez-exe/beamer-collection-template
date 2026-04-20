@@ -1,0 +1,75 @@
+\ProvidesPackage{common-packages}
+
+%****************************************************************************
+% Packages for LaTeX Documents (non-Beamer)
+%****************************************************************************
+
+%************************************************************
+% Encoding and Language
+%************************************************************
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+%************************************************************
+% Fonts and Typography
+%************************************************************
+\usepackage[scaled]{helvet}
+\renewcommand\familydefault{\sfdefault}
+
+%************************************************************
+% Layout and Geometry
+%************************************************************
+\usepackage{geometry}
+\geometry{margin=1in}
+
+%************************************************************
+% Headers and Footers
+%************************************************************
+\usepackage{fancyhdr}
+
+%************************************************************
+% Bibliography
+%************************************************************
+\usepackage[style=ieee,backend=biber]{biblatex}
+
+%************************************************************
+% Graphics and Color
+%************************************************************
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+%************************************************************
+% Math Packages
+%************************************************************
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+%************************************************************
+% Floats and Captions
+%************************************************************
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+
+%************************************************************
+% Advanced Layout
+%************************************************************
+\usepackage{changepage}      % Change margins during document
+\usepackage{pdflscape}       % Landscape pages
+\usepackage{multirow}
+\usepackage{array}
+
+%************************************************************
+% Additional Utilities
+%************************************************************
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
+\usepackage{nicematrix}
+
+%************************************************************
+% Lists and Spacing
+%************************************************************
+\usepackage{booktabs}        % Professional tables
+\usepackage{setspace}
+\onehalfspacing             % 1.5 line spacing (common in documents)

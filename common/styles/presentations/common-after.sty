@@ -1,0 +1,42 @@
+\ProvidesPackage{common-after}
+
+%****************************************************************************
+% Setup Title, Subtitle, Author from Macros
+% Load this file AFTER your theme and other customizations
+%****************************************************************************
+
+% Beamer sets these internally, but we hook them from custom macros
+% In your main.tex, define:
+%   \newcommand{\texTitle}{Your Title}
+%   \newcommand{\texSubTitle}{Your Subtitle}
+%   \newcommand{\texAuthor}{Your Name}
+%   \newcommand{\texShortTitle}{Short Name for Footer}
+%
+% Then this package will set them for you.
+
+\AtBeginDocument{
+	\title{\texTitle}
+	\subtitle{\texSubTitle}
+	\author{\texAuthor}
+	\ifdefined\texDate
+		\date{\texDate}
+	\else
+		\date{\today}
+	\fi
+}
+
+% Shared asset paths for any project under presentations/
+\makeatletter
+\providecommand\Ginput@path{}
+\g@addto@macro\Ginput@path{{../common/images/}{../../common/images/}}
+\makeatother
+
+% Shared bibliography helpers for any project under presentations/
+\newcommand{\addpresentationcommonbib}[1]{\addbibresource{../common/references/#1}}
+\newcommand{\addrootcommonbib}[1]{\addbibresource{../../common/references/#1}}
+
+%************************************************************
+% Footline setup (if using a theme that respects these)
+%************************************************************
+% Common presentation setups include author, short title, and page number
+% Your theme should \usebeamertemplate{footline} to incorporate these

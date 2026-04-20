@@ -1,0 +1,46 @@
+{
+  "latex-workshop.latex.outDir": "out",
+  "latex-workshop.view.pdf.viewer": "tab",
+  "latex-workshop.chktex.enabled": true,
+  "latex-workshop.linting.chktex.run": "onSave",
+  "[latex]": {
+    "editor.defaultFormatter": "James-Yu.latex-workshop",
+    "editor.formatOnSave": true
+  },
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    }
+  },
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": true,
+  "python.linting.ruffEnabled": true,
+  "editor.rulers": [100],
+  "files.exclude": {
+    "**/*.aux": true,
+    "**/*.log": true,
+    "**/*.nav": true,
+    "**/*.toc": true,
+    "**/*.snm": true,
+    "**/*.vrb": true,
+    "**/*.fls": true,
+    "**/*.fdb_latexmk": true,
+    "**/*.bbl": true,
+    "**/*.bcf": true,
+    "**/*.blg": true,
+    "**/*.run.xml": true,
+    "**/*.synctex.gz": true,
+    "**/out": true,
+    "**/__pycache__": true,
+    "**/*.pyc": true,
+    "**/.ipynb_checkpoints": true
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "markdownlint.config": {
+    "MD013": false
+  }
+}

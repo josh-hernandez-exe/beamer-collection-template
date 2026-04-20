@@ -1,0 +1,71 @@
+{
+  "name": "Beamer Collection Template",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.12",
+      "installTools": true,
+      "optimize": false
+    },
+    "ghcr.io/prulloac/devcontainer-features/latex:1": {
+      "packages": "beamer,biblatex,biblatex-ieee,biber,booktabs,caption,changepage,courier,float,fontawesome5,helvetic,jknapltx,listings,nicematrix,pdflscape,pgf,pgfplots,rsfs,setspace,standalone,tikz-cd,tikzsymbols,titlesec,tkz-base,tkz-euclide,xcolor,collection-latexrecommended"
+    }
+  },
+  "forwardPorts": [],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "James-Yu.latex-workshop",
+        "ms-python.python",
+        "charliermarsh.ruff",
+        "ms-python.pylint",
+        "eamodio.gitlens",
+        "tamasfe.even-better-toml",
+        "ms-toolsai.jupyter",
+        "ms-toolsai.vscode-jupyter-cell-delimiters"
+      ],
+      "settings": {
+        "latex-workshop.latex.recipes": [
+          {
+            "name": "latexmk",
+            "tools": ["latexmk"]
+          },
+          {
+            "name": "latexmk (minted)",
+            "tools": ["latexmk_minted"]
+          }
+        ],
+        "latex-workshop.latex.tools": [
+          {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": ["-pdf", "-cd", "-quiet", "%DOCFILE%"]
+          },
+          {
+            "name": "latexmk_minted",
+            "command": "latexmk",
+            "args": ["-pdf", "-cd", "-shell-escape", "-quiet", "%DOCFILE%"]
+          }
+        ],
+        "latex-workshop.view.pdf.viewer": "tab",
+        "latex-workshop.chktex.enabled": true,
+        "latex-workshop.linting.chktex.run": "onSave"
+      }
+    }
+  },
+  "postCreateCommand": "bash .devcontainer/setup.sh",
+  "remoteUser": "vscode",
+  "mounts": [
+    // 1Password SSH agent forwarding (macOS)
+    // Uncomment the line for your OS and comment out the other.
+    // Requires: Settings → Developer → SSH Agent enabled in 1Password desktop app.
+    // "source=/Users/${localEnv:USER}/.1password/agent.sock,target=/tmp/1p-agent.sock,type=bind",
+    "source=${localEnv:HOME}/.1password/agent.sock,target=/tmp/1p-agent.sock,type=bind",
+    // Windows (WSL2): "source=//./pipe/openssh-ssh-agent,target=/tmp/1p-agent.sock,type=bind",
+  ],
+  "remoteEnv": {
+    "SSH_AUTH_SOCK": "/tmp/1p-agent.sock"
+  }
+}

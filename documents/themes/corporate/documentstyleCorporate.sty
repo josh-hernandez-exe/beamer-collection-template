@@ -1,0 +1,99 @@
+% ACME Corp Document Style
+% Professional corporate document formatting
+
+\ProvidesPackage{documentstyleCorporate}
+
+%************************************************************
+% Import Shared Colors
+%************************************************************
+\usepackage{../../common/styles/shared-colors}
+
+%************************************************************
+% Page Styling with ACME Corp Theme
+%************************************************************
+
+% Fancyhdr setup
+\pagestyle{fancy}
+\fancyhf{} % Clear default headers/footers
+\setlength{\headheight}{14pt}
+
+% Header: Company name (left) and page number (right) with thin line
+\rhead{\textbf{\thepage}}
+\lhead{\small \textbf{ACME Corporation}}
+
+% Footer rule
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{AcmeRed}\leaders\hrule height \headrulewidth\hfill}}
+
+%************************************************************
+% Custom Title Page
+%************************************************************
+\makeatletter
+\renewcommand{\maketitle}{
+  \newpage
+  \thispagestyle{empty}
+
+  \begin{center}
+    \vspace*{1.5cm}
+
+    % Company logo placeholder (if defined)
+    \ifdefined\corporatelogo
+      \IfFileExists{\corporatelogo}{\includegraphics[width=3cm,keepaspectratio]{\corporatelogo}\\[0.5cm]}{}
+    \fi
+
+    {\LARGE \textbf{\textcolor{AcmeCharcoal}{\texTitle}}}\\[0.5cm]
+
+    {\large \textcolor{AcmeRed}{\texSubtitle}}\\[2cm]
+
+    {\large\textbf{\texAuthor}}\\[0.5cm]
+    {\normalsize \texDate}\\[1cm]
+
+    {\normalsize \textcolor{AcmeGray}{\texDepartment}}
+  \end{center}
+
+  \vfill
+
+  \begin{center}
+    \rule{0.5\textwidth}{2pt}\\
+    \textbf{ACME Corporation}\\
+    \rule{0.5\textwidth}{2pt}
+  \end{center}
+
+  \newpage
+}
+\makeatother
+
+%************************************************************
+% Section and Subsection Styling
+%************************************************************
+\usepackage{titlesec}
+
+\titleformat{\section}
+  {\Large\bfseries\color{AcmeCharcoal}}
+  {\thesection}
+  {1em}
+  {}
+  [\color{AcmeRed}\hrule]
+
+\titleformat{\subsection}
+  {\large\bfseries\color{AcmeRed}}
+  {\thesubsection}
+  {1em}
+  {}
+
+\titleformat{\subsubsection}
+  {\normalsize\bfseries\color{AcmeGray}}
+  {\thesubsubsection}
+  {1em}
+  {}
+
+%************************************************************
+% Document-specific Macros (to be defined in main.tex)
+%************************************************************
+% \newcommand{\texTitle}{Your Title}
+% \newcommand{\texSubtitle}{Your Subtitle}
+% \newcommand{\texAuthor}{Your Name}
+% \newcommand{\texDate}{April 2026}
+% \newcommand{\texDepartment}{Your Department}
+% \newcommand{\corporatelogo}{path/to/logo.png}

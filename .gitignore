@@ -1,0 +1,49 @@
+# LaTeX artifacts
+*.aux
+*.log
+*.nav
+*.toc
+*.snm
+*.vrb
+*.fls
+*.fdb_latexmk
+*.bbl
+*.bcf
+*.blg
+*.run.xml
+*.synctex.gz
+out/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.venv/
+.env
+.ipynb_checkpoints/
+*.egg
+
+# OS
+.DS_Store
+Thumbs.db
+.vscode/workspace.json
+
+# Editor backups
+*~
+*.swp
+*.swo
+
+# Compiled PDFs (except in dropbox/)
+presentations/**/*.pdf
+documents/**/*.pdf
+!dropbox/*.pdf
+
+# Compiled PPTX (except in dropbox/)
+**/*.pptx
+!dropbox/*.pptx
+
+# IDE
+.idea/
+*.sublime-project
+*.sublime-workspace

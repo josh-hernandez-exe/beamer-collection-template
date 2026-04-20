@@ -1,0 +1,128 @@
+\documentclass[11pt]{article}
+
+% Shared listings
+\usepackage{../../common/styles/shared-listings}
+
+% Shared colors
+\usepackage{../../common/styles/shared-colors}
+
+% Document packages
+\usepackage{../../common/styles/documents/common-packages}
+
+% Theme
+\usepackage{../themes/corporate/documentstyleCorporate}
+
+% Final setup
+\usepackage{../../common/styles/documents/common-after}
+
+\graphicspath{
+    {images/}
+}
+
+%************************************************************
+% Document-specific macros
+%************************************************************
+\newcommand{\texTitle}{Business Report: Q1 2026 Performance}
+\newcommand{\texSubtitle}{Strategic Analysis and Recommendations}
+\newcommand{\texAuthor}{Business Analyst}
+\newcommand{\texDate}{April 19, 2026}
+\newcommand{\texDepartment}{Corporate Analytics}
+\newcommand{\texSubject}{Business Report}
+\newcommand{\texKeywords}{business, analysis, acme, performance}
+\newcommand{\corporatelogo}{corporate-logo.png}
+
+\addbibresource{references/demo.bib}
+% Optional shared bibliographies:
+% \adddocumentcommonbib{shared.bib}
+% \addrootcommonbib{shared.bib}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+    This report presents Q1 2026 performance metrics and strategic recommendations for ACME Corporation. It demonstrates the corporate document template with professional formatting suitable for business communications.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+\section{Executive Summary}
+
+This quarter showed strong performance across key metrics. The corporate document template provides:
+
+\begin{itemize}
+    \item Professional business formatting
+    \item ACME Corp color scheme (charcoal + red)
+    \item Integrated analytics support
+    \item Clean, minimal design
+\end{itemize}
+
+\section{Performance Metrics}
+
+\subsection{Financial Overview}
+
+\begin{table}[h]
+    \centering
+    \caption{Q1 2026 Financial Summary}
+    \begin{tabular}{|l|r|r|r|}
+        \hline
+        \textbf{Metric} & \textbf{Q1 2026} & \textbf{Q4 2025} & \textbf{Change}             \\
+        \hline
+        Revenue (M\$)   & 125.4            & 121.2            & \textcolor{AcmeRed}{+3.5\%} \\
+        Profit Margin   & 28.2\%           & 26.8\%           & \textcolor{AcmeRed}{+1.4pp} \\
+        Customer Count  & 15,240           & 14,890           & \textcolor{AcmeRed}{+2.4\%} \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\subsection{Operational Efficiency}
+
+Key achievements include:
+\begin{itemize}
+    \item \textcolor{AcmeRed}{\textbf{+15\%}} improvement in process automation
+    \item \textcolor{AcmeRed}{\textbf{-8\%}} reduction in operational costs
+    \item \textcolor{AcmeRed}{\textbf{+12\%}} increase in employee satisfaction
+\end{itemize}
+
+\section{Technical Analysis}
+
+\begin{lstlisting}[style=pythonstyle, caption=Performance Analysis Code]
+def analyze_metrics(data: dict) -> dict:
+    """Analyze business metrics."""
+    results = {
+        'revenue_growth': (data['q1'] - data['q4']) / data['q4'],
+        'profit_margin': data['profit'] / data['revenue'],
+        'trend': 'positive' if data['q1'] > data['q4'] else 'negative'
+    }
+    return results
+\end{lstlisting}
+
+\section{Strategic Recommendations}
+
+\subsection{Short-term (Next 90 Days)}
+
+Implement quick wins to build momentum:
+\begin{enumerate}
+    \item Accelerate digital transformation initiatives
+    \item Expand market share in emerging regions
+    \item Optimize supply chain operations
+\end{enumerate}
+
+\subsection{Long-term (Next 12 Months)}
+
+Invest in sustainable growth:
+\begin{enumerate}
+    \item Develop next-generation product offerings
+    \item Build strategic partnerships
+    \item Invest in workforce development
+\end{enumerate}
+
+\section{Conclusion}
+
+Q1 2026 demonstrates strong execution and positive momentum. The ACME Corp document template provides a professional framework for business communications and strategic planning.
+
+\nocite{*}
+\printbibliography
+
+\end{document}
